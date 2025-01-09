@@ -5,8 +5,8 @@ import { Star } from "lucide-react";
 import SocialsBox from "../ui/SocialsBox";
 import { testimonials } from "../data/constants";
 import type { CardProps } from "../types";
-import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion, wrap } from "motion/react";
 
 function Card({ name, address, review, socials }: CardProps) {
   return (
@@ -47,38 +47,37 @@ const variants = {
 };
 
 export default function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+  const [[page, direction], setPage] = useState([0, 0]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const paginate = (newDirection: number) => {
-    if (newDirection === 1) {
-      setDirection(-1);
-      setCurrentIndex((prevIndex) =>
-        prevIndex - 1 < 0 ? testimonials.length - 1 : prevIndex - 1
-      );
-    } else if (newDirection === -1) {
-      setDirection(1);
-      setCurrentIndex((prevIndex) =>
-        prevIndex + 1 >= testimonials.length ? 0 : prevIndex + 1
-      );
-    }
+    setPage([page + newDirection, newDirection]);
   };
 
   const getVisibleTestimonials = () => {
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
-    if (isMobile) {
-      return [testimonials[currentIndex]];
-    } else {
-      const indices = [
-        currentIndex,
-        (currentIndex + 1) % testimonials.length,
-        (currentIndex + 2) % testimonials.length,
-      ];
-      return indices.map((i) => testimonials[i]);
-    }
-  };
+    const totalItems = testimonials.length;
+    const baseIndex = wrap(0, totalItems, page);
 
-  console.log("rendered");
+    if (isMobile) {
+      return [testimonials[baseIndex]];
+    }
+
+    return [
+      testimonials[baseIndex],
+      testimonials[wrap(0, totalItems, baseIndex + 1)],
+      testimonials[wrap(0, totalItems, baseIndex + 2)],
+    ];
+  };
 
   return (
     <div className="">
@@ -90,19 +89,22 @@ export default function Testimonials() {
         arrow
         contentElement={
           <div className="w-full overflow-hidden">
-            <AnimatePresence initial={false} custom={direction}>
+            <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
-                key={currentIndex}
+                key={page}
                 custom={direction}
                 variants={variants}
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.25, ease: "easeOut" }}
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
                 className="grid grid-cols-1 lg:grid-cols-3 gap-7"
               >
                 {getVisibleTestimonials().map((testimonial, index) => (
-                  <Card key={index} {...testimonial} />
+                  <Card key={`${page}-${index}`} {...testimonial} />
                 ))}
               </motion.div>
             </AnimatePresence>
