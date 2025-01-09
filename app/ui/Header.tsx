@@ -1,9 +1,10 @@
 import DesktopLogo from "@/public/logo/desktop.svg";
 import Menu from "@/public/menu.svg";
 import Image from "next/image";
+import Link from "next/link";
+import { headerNavs } from "../data/constants";
 
 export default function Header() {
-  const navs = ["Home", "About Me", "Portfolio", "Services"];
   return (
     <header className="flex w-full h-[119px] bg-black border-b border-b-[#1C1C21]">
       <div className="w-4 lg:w-[62px] xl:w-[125px] border-r border-r-[#1C1C21]"></div>
@@ -13,17 +14,19 @@ export default function Header() {
         </div>
 
         <nav className="self-end border border-b-[0] border-[#1C1C21] rounded-t-xl hidden lg:flex">
-          {navs.map((nav, index) => (
-            <a
-              key={nav}
-              href="#"
+          {headerNavs.map((nav, index) => (
+            <Link
+              key={nav.title}
+              href={nav.href}
               className={`font-medium lg:text-sm xl:text-lg text-white px-10 py-6 xl:py-[30px] ${
                 index === 0 && "bg-[#131316]"
-              } ${index !== navs.length - 1 && "border-r border-r-[#1C1C21]"}
+              } ${
+                index !== headerNavs.length - 1 && "border-r border-r-[#1C1C21]"
+              }
                hover:bg-[#131316]`}
             >
-              {nav}
-            </a>
+              {nav.title}
+            </Link>
           ))}
         </nav>
 
