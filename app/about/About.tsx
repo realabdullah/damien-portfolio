@@ -3,6 +3,7 @@ import { aboutStats } from "../data/constants";
 export default function About() {
   return (
     <div className="mt-[100px]">
+      <div className="lg:hidden mb-[30px] min-h-[236px] rounded-[20px] bg-[url('https://res.cloudinary.com/dxvhsze0l/image/upload/v1736425792/v9kiujbcekfwhdtfckzd.webp')] bg-no-repeat bg-center bg-cover"></div>
       <div className="relative lg:min-h-[784px] rounded-[34px] lg:bg-[url('https://res.cloudinary.com/dxvhsze0l/image/upload/v1736425792/v9kiujbcekfwhdtfckzd.webp')] bg-no-repeat bg-center bg-cover">
         <div className="shadow-[5px_5px_black, -5px_-5px_black]">
           <div className="flex items-stretch justify-between gap-2">
@@ -11,7 +12,7 @@ export default function About() {
                 About
               </span>
 
-              <h2 className="uppercase font-semibold xl:text-[58px]/[79px] text-white whitespace-nowrap">
+              <h2 className="uppercase font-semibold text-2xl lg:text-5xl xl:text-[58px]/[79px] text-white whitespace-nowrap">
                 About damien braun
               </h2>
             </div>
@@ -23,11 +24,11 @@ export default function About() {
             </div>
           </div>
 
-          <div className="bg-black grid grid-cols-6 gap-5 py-6">
+          <div className="bg-black flex flex-wrap gap-5 py-6">
             {aboutStats.map((stat, index) => (
               <div
                 key={index}
-                className="col-span-1 bg-[#0E0E10] border border-[#1C1C21] rounded-xl py-6 px-[30px] flex flex-col items-start"
+                className="flex-1 bg-[#0E0E10] border border-[#1C1C21] rounded-xl py-6 px-[30px] flex flex-col items-start"
               >
                 <span className="font-semibold text-4xl text-white">
                   {stat.value}
@@ -38,6 +39,14 @@ export default function About() {
               </div>
             ))}
           </div>
+
+          <div className="max-lg:hidden w-full h-10 grid grid-cols-[40%,60%] gap-0">
+            <div className="relative h-full bg-black after:absolute after:rounded-br-[20px] after:z-[1] after:content-[''] after:right-[-5%] after:h-full after:w-full after:bg-inherit after:skew-x-[-35deg] after:top-0 after:shadow-[5px_0px_black]"></div>
+
+            <div className="relative h-full bg-transparent rounded-tr-[34px] shadow-[10px_-10px_black] after:absolute after:rounded-tl-[50px] after:z-[1] after:content-[''] after:left-[3%] after:h-full after:w-full after:bg-red after:skew-x-[-35deg] after:top-[3px] after:shadow-[-12px_-10px_black]"></div>
+          </div>
+
+          <div className="max-lg:hidden h-10 w-10 rounded-tl-[30px] bg-transparent shadow-[-10px_-10px_black]"></div>
 
           <div className="max-lg:hidden absolute bottom-0 w-full bg-transparent flex items-end justify-between">
             <div className="absolute -top-[35px] left-0 h-10 w-10 rounded-bl-[30px] bg-transparent shadow-[-10px_10px_black]"></div>

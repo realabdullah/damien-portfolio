@@ -1,10 +1,15 @@
+"use client";
+
 import DesktopLogo from "@/public/logo/desktop.svg";
 import Menu from "@/public/menu.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { headerNavs } from "../data/constants";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="flex w-full h-[119px] bg-black border-b border-b-[#1C1C21]">
       <div className="w-4 lg:w-[62px] xl:w-[125px] border-r border-r-[#1C1C21]"></div>
@@ -19,7 +24,7 @@ export default function Header() {
               key={nav.title}
               href={nav.href}
               className={`font-medium lg:text-sm xl:text-lg text-white px-10 py-6 xl:py-[30px] ${
-                index === 0 && "bg-[#131316]"
+                nav.href === pathname && "bg-[#131316]"
               } ${
                 index !== headerNavs.length - 1 && "border-r border-r-[#1C1C21]"
               }

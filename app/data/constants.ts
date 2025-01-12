@@ -101,7 +101,7 @@ export const footerLinks = [
   {
     title: "Home",
     links: [
-      { title: "About me", href: "#" },
+      { title: "About me", href: "/about" },
       { title: "My works", href: "#" },
       { title: "Testimonials", href: "#" },
     ],
