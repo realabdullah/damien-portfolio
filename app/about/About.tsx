@@ -2,7 +2,7 @@ import { aboutStats } from "../data/constants";
 
 export default function About() {
   return (
-    <div className="mt-[100px]">
+    <div className="mt-10 lg:mt-20 xl:mt-[100px]">
       <div className="lg:hidden mb-[30px] min-h-[236px] rounded-[20px] bg-[url('https://res.cloudinary.com/dxvhsze0l/image/upload/v1736425792/v9kiujbcekfwhdtfckzd.webp')] bg-no-repeat bg-center bg-cover"></div>
       <div className="relative lg:min-h-[784px] rounded-[34px] lg:bg-[url('https://res.cloudinary.com/dxvhsze0l/image/upload/v1736425792/v9kiujbcekfwhdtfckzd.webp')] bg-no-repeat bg-center bg-cover">
         <div className="shadow-[5px_5px_black, -5px_-5px_black]">

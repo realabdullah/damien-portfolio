@@ -5,8 +5,8 @@ import { Star } from "lucide-react";
 import SocialsBox from "../ui/SocialsBox";
 import { testimonials } from "../data/constants";
 import type { CardProps } from "../types";
-import { useEffect, useMemo, useState } from "react";
-import { AnimatePresence, motion, wrap } from "motion/react";
+import { useCarousel } from "../utils/useCarousel";
+import CarouselCard from "../ui/CarouselCard";
 
 function Card({ name, address, review, socials }: CardProps) {
   return (
@@ -34,50 +34,10 @@ function Card({ name, address, review, socials }: CardProps) {
   );
 }
 
-const variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 500 : -500,
-  }),
-  center: {
-    x: 0,
-  },
-  exit: (direction: number) => ({
-    x: direction > 0 ? -500 : 500,
-  }),
-};
-
 export default function Testimonials() {
-  const [[page, direction], setPage] = useState([0, 0]);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // lg breakpoint
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
-
-  const getVisibleTestimonials = () => {
-    const totalItems = testimonials.length;
-    const baseIndex = wrap(0, totalItems, page);
-
-    if (isMobile) {
-      return [testimonials[baseIndex]];
-    }
-
-    return [
-      testimonials[baseIndex],
-      testimonials[wrap(0, totalItems, baseIndex + 1)],
-      testimonials[wrap(0, totalItems, baseIndex + 2)],
-    ];
-  };
+  const { page, direction, visibleItems, paginate } = useCarousel({
+    items: testimonials,
+  });
 
   return (
     <div className="">
@@ -87,31 +47,14 @@ export default function Testimonials() {
         sub={{ title: "Total Reviews", description: "323" }}
         link={{ title: "View All Testimonials", href: "/testimonials" }}
         arrow
-        contentElement={
-          <div className="w-full overflow-hidden">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
-              <motion.div
-                key={page}
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 },
-                }}
-                className="grid grid-cols-1 lg:grid-cols-3 gap-7"
-              >
-                {getVisibleTestimonials().map((testimonial, index) => (
-                  <Card key={`${page}-${index}`} {...testimonial} />
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        }
         paginate={paginate}
-      />
+      >
+        <CarouselCard page={page} direction={direction}>
+          {visibleItems.map((testimonial, index) => (
+            <Card key={`${page}-${index}`} {...testimonial} />
+          ))}
+        </CarouselCard>
+      </SectionContent>
     </div>
   );
 }

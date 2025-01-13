@@ -2,11 +2,11 @@
 
 import { MoveRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { JSX } from "react";
+import React, { JSX } from "react";
 
 type Props = {
   title: string;
-  description: string;
+  description?: string;
   link?: {
     title: string;
     href: string;
@@ -17,7 +17,8 @@ type Props = {
     title: string;
     description: string;
   };
-  contentElement?: JSX.Element;
+  children?: React.ReactNode;
+  padBottom?: boolean;
   paginate?: (newDirection: number) => void;
 };
 
@@ -28,24 +29,28 @@ export default function SectionContent({
   arrow,
   borderless,
   sub,
-  contentElement,
+  children,
   paginate,
+  padBottom = true,
 }: Props) {
   return (
     <div>
       <div
-        className={`mb-5 lg:mb-10 xl:mb-20 pb-5 lg:pb-10 xl:pb-[50px] flex items-start lg:items-center justify-between gap-5
+        className={`flex items-start lg:items-center justify-between gap-5
         ${!borderless && "border-b border-[#1C1C21]"}
         ${sub ? "flex-col w-full" : "flex-col lg:flex-row"}
+        ${padBottom && "mb-5 lg:mb-10 xl:mb-20 pb-5 lg:pb-10 xl:pb-[50px]"}
       `}
       >
         <div className={`flex flex-col lg:gap-1 ${sub && "w-full"}`}>
           <span className="uppercase font-semibold text-sm lg:text-base xl:text-xl text-[#797C86]">
             {title}
           </span>
-          <h2 className="uppercase font-semibold text-[28px]/[38px] lg:text-5xl xl:text-[58px] text-white">
-            {description}
-          </h2>
+          {description && (
+            <h2 className="uppercase font-semibold text-[28px]/[38px] lg:text-5xl xl:text-[58px] text-white">
+              {description}
+            </h2>
+          )}
         </div>
 
         <div
@@ -103,7 +108,7 @@ export default function SectionContent({
         </div>
       </div>
 
-      {contentElement}
+      {children}
 
       {arrow && (
         <div className="hidden w-fit mx-auto mt-10 max-lg:flex items-center gap-4 rounded-[100px] border border-[#1C1C21] p-2.5">

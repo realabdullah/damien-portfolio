@@ -206,3 +206,75 @@ export const journeyData = [
     desc: "In 2020, Damien's dedication and creativity earned her several prestigious photography awards, solidifying her position as a visionary photographer.",
   },
 ];
+
+export const portraitsPhotos = [
+  {
+    title: "Faces of Resilience",
+    date: "March 2022",
+    href: "/portfolio/faces-of-resilience",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736773096/bw3nbia6zytbt6gumonr.webp",
+  },
+  {
+    title: "Innocence Unveiled",
+    date: "January 2020",
+    href: "/portfolio/innocence-unveiled",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736773123/wqxcuutnevnjdvbrfthg.webp",
+  },
+  {
+    title: "Elegance in Monochrome",
+    date: "January 2020",
+    href: "/portfolio/elegance-in-monochrome",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1735947891/y8ldgfkeffat55xz0cc9.webp",
+  },
+];
+
+export const eventsPhotography = [
+  {
+    title: "A Wedding Tale",
+    date: "September 2021",
+    href: "/portfolio/a-wedding-tale",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736778015/uxqtpkfb3ptebvbahas6.webp",
+  },
+  {
+    title: "Corporate Excellence Summit",
+    date: "November 2019",
+    href: "/portfolio/corporate-excellence-summit",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736778056/pvdd2cymxqrv6deqrhap.webp",
+  },
+  {
+    title: "Festival of Colors",
+    date: "March 2018",
+    href: "/portfolio/festival-of-colors",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736778100/pwxxjwnmitetekomrrnm.webp",
+  },
+];
+
+export const commercialPhotography = [
+  {
+    title: "Product Elegance",
+    date: "August 2020",
+    href: "/portfolio/product-elegance",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736779079/zxqjw9evk692ffgt3hfp.webp",
+  },
+  {
+    title: "Brand Storytelling",
+    date: "May 2019",
+    href: "/portfolio/brand-storytelling",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736779231/t4xwqnpizlsej0b1h9kg.webp",
+  },
+  {
+    title: "Culinary Delights",
+    date: "February 2017",
+    href: "/portfolio/culinary-delights",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736779365/kiwrgjtnivubtgd33vrn.webp",
+  },
+];
