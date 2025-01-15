@@ -89,7 +89,11 @@ export const faqTwo = [
   },
 ];
 
-export const socialIconsMap: { [key: string]: any } = { X, linkedin, facebook };
+export const socialIconsMap: { [key: string]: string } = {
+  X,
+  linkedin,
+  facebook,
+};
 
 export const footerSocials = [
   { type: "facebook", href: "#" },
@@ -276,5 +280,117 @@ export const commercialPhotography = [
     href: "/portfolio/culinary-delights",
     image:
       "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736779365/kiwrgjtnivubtgd33vrn.webp",
+  },
+];
+
+export const servicesPricing = [
+  {
+    heading: "Portrait Photography",
+    content:
+      "Our portrait photography service is all about showcasing your unique personality. Whether you need a professional headshot, a family portrait, or a personal photoshoot, we create images that reflect your true self. We work closely with you to bring out your best angles and expressions, ensuring every portrait tells your story.",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736972566/cnmuir1vc7ysnzw8xah0.webp",
+    link: "/",
+    ranges: [
+      {
+        title: "Individual Session",
+        price: "$250",
+        points: [
+          "Ideal for capturing your unique personality and style.",
+          "Includes a 2-hour photoshoot and 20 professionally edited images.",
+          "Additional images can be purchased at $10 each.",
+        ],
+      },
+      {
+        title: "Family Session",
+        price: "$400",
+        points: [
+          "Perfect for creating lasting memories with your loved ones.",
+          "Includes a 3-hour photoshoot and 30 professionally edited images.",
+          "Additional images can be purchased at $10 each.",
+        ],
+      },
+      {
+        title: "Couple Session",
+        price: "$300",
+        points: [
+          "Celebrate your love story with an intimate photoshoot.",
+          "Includes a 2.5-hour photoshoot and 25 professionally edited images.",
+          "Additional images can be purchased at $10 each.",
+        ],
+      },
+    ],
+  },
+  {
+    heading: "Events Photography",
+    content:
+      "Our event photography service is dedicated to capturing the magic of your special occasions. Whether it's a wedding, corporate event, or milestone celebration, we're there to document every heartfelt moment. We blend into the background, ensuring natural and candid shots that reflect the emotions of the day.",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736972564/sjbtknnhqxdrzrqipuct.webp",
+    link: "/",
+    ranges: [
+      {
+        title: "Wedding Photography",
+        price: "$1,500",
+        points: [
+          "Capture the magic of your special day.",
+          "Includes full-day coverage, a second photographer, and 300+ professionally edited images.",
+          "Customizable packages are available to suit your specific wedding needs.",
+        ],
+      },
+      {
+        title: "Party Coverage",
+        price: "$800",
+        points: [
+          "Preserve the fun and excitement of your event.",
+          "Includes up to 4 hours of coverage and 150+ professionally edited images.",
+          "Additional hours can be added at $150 per hour.",
+        ],
+      },
+      {
+        title: "Corporate Events",
+        price: "Custom Pricing",
+        points: [
+          "Tailored solutions for corporate gatherings, conferences, and seminars.",
+          "Contact us for a personalized quote based on your event's requirements.",
+        ],
+      },
+    ],
+  },
+  {
+    heading: "Commercial Photography",
+    content:
+      "In the world of business, a compelling image can make all the difference. Our commercial photography service is designed to enhance your brand's visual identity. We create striking images for your products, services, and marketing campaigns that leave a lasting impact on your audience.",
+    image:
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1736972570/akcugp5bskxadawvrlrv.webp",
+    link: "/",
+    ranges: [
+      {
+        title: "Product Photography",
+        price: "$500",
+        points: [
+          "Showcase your products in the best light.",
+          "Includes a half-day photoshoot, 20 professionally edited product images, and high-resolution files.",
+          "Additional images can be purchased at $20 each.",
+        ],
+      },
+      {
+        title: "Real Estate Photography",
+        price: "$700",
+        points: [
+          "Highlight the beauty of your properties.",
+          "Includes interior and exterior shots, a 2-hour photoshoot, and 25 professionally edited images.",
+          "Additional images can be purchased at $20 each.",
+        ],
+      },
+      {
+        title: "Brand Photography",
+        price: "Custom Pricing",
+        points: [
+          "Craft a visual narrative that aligns with your brand identity.",
+          "Contact us to discuss your brand photography needs and receive a personalized quote.",
+        ],
+      },
+    ],
   },
 ];

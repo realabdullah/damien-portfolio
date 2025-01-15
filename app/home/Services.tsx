@@ -33,8 +33,8 @@ export default function Services() {
 
           <p className="mb-[50px] font-normal text-sm lg:text-lg text-[#797C86]">
             Our event photography service is dedicated to capturing the magic of
-            your special occasions. Whether it's a wedding, corporate event, or
-            milestone celebration, we're there to document every heartfelt
+            your special occasions. Whether it&apos;s a wedding, corporate event, or
+            milestone celebration, we&apos;re there to document every heartfelt
             moment. We blend into the background, ensuring natural and candid
             shots that reflect the emotions of the day.
           </p>
