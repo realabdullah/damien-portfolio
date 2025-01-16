@@ -74,16 +74,16 @@ export default function About() {
         </h3>
 
         <p className="mt-5 lg:mt-[30px] xl:mt-10 font-normal text-sm lg:text-base xl:text-xl text-[#797C86]">
-          Damien Braun's love affair with photography began at a young age,
+          Damien Braun&apos;s love affair with photography began at a young age,
           nurtured by the captivating landscapes and vibrant cultures
           surrounding her in the heart of the USA. Her passion for storytelling
           through imagery led her to embark on a photography journey that has
           spanned over 15 years. Driven by an insatiable curiosity to explore
           the beauty in everyday moments, Damien has honed her craft
           meticulously. Her background in digital media provided her with a
-          solid foundation, but it's her keen eye for detail and an innate
-          ability to capture raw emotions that truly set her apart. Damien's
-          journey is more than just taking pictures; it's about capturing the
+          solid foundation, but it&apos;s her keen eye for detail and an innate
+          ability to capture raw emotions that truly set her apart. Damien&apos;s
+          journey is more than just taking pictures; it&apos;s about capturing the
           essence of the human spirit, the fleeting magic of nature, and the
           emotions that define our lives. With each click of her camera, she
           weaves stories that transcend time and space.

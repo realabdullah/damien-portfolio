@@ -1,4 +1,3 @@
-import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import CrossStar from "@/public/cross-star.svg";
@@ -48,7 +47,7 @@ export default function About() {
               <p className="font-normal text-sm lg:text-base xl:text-lg text-[#AFB0B6]">
                 My journey as a photographer has been a lifelong quest to
                 capture the extraordinary in the ordinary, to freeze fleeting
-                moments in time, and to share the world's beauty as I see it.
+                moments in time, and to share the world&apos;s beauty as I see it.
                 Based in the enchanting landscapes of the USA, I find
                 inspiration in every corner of this diverse and vibrant country.
                 Join me as we embark on a visual odyssey, where each photograph

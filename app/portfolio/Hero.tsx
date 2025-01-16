@@ -17,7 +17,7 @@ export default function PortfolioHero() {
               Step into a visual journey that encapsulates the essence of my
               lens. Each photograph in this portfolio is a narrative, a frozen
               moment in time, and a testament to the artistry and passion poured
-              into every frame. Explore the diverse tapestry of stories I've had
+              into every frame. Explore the diverse tapestry of stories I&apos;ve had
               the privilege to capture and witness the world through my lens.
             </p>
           </div>

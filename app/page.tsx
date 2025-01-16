@@ -5,7 +5,6 @@ import About from "./home/About";
 import Services from "./home/Services";
 import Portfolio from "./home/Portfolio";
 import FAQs from "./home/FAQs";
-import Testimonials from "./home/Testimonials";
 
 export default function Page() {
   return (
