@@ -394,3 +394,36 @@ export const servicesPricing = [
     ],
   },
 ];
+
+export const formFields = [
+  {
+    label: "First Name",
+    type: "text",
+    id: "firstName",
+    placeholder: "First name",
+  },
+  {
+    label: "Last Name",
+    type: "text",
+    id: "lastName",
+    placeholder: "Last name",
+  },
+  {
+    label: "Email",
+    type: "email",
+    id: "email",
+    placeholder: "Email Address",
+  },
+  {
+    label: "Phone Number",
+    type: "tel",
+    id: "phoneNumber",
+    placeholder: "Phone Number",
+  },
+  {
+    label: "Your Message",
+    type: "text",
+    id: "message",
+    placeholder: "Message",
+  },
+];
